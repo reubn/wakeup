@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  wakeup:
+    image: wakeup:0.1
+    ports:
+      - "8023:8023"
+    environment:
+      HA_URL: ""
+      HA_TOKEN: ""
+    volumes:
+      - ./app:/app
+    restart: on-failure

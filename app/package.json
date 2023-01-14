@@ -1,0 +1,34 @@
+{
+  "name": "wakeup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config",
+    "build:watch": "rollup --config --watch",
+    "node": "node --no-warnings --experimental-specifier-resolution=node --experimental-global-customevent",
+    "start": "npm run node -- ./index.js",
+    "test:client": "npm run node -- ./client/test.js",
+    "test:fade": "npm run node -- ./testFade.js",
+    "createRoutine": "npm run node -- ./createRoutine.js",
+    "listRoutines": "npm run node -- ./listRoutines.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^4.8.1",
+    "bezier-easing": "^2.1.0",
+    "co-body": "^6.1.0",
+    "date-fns": "^2.29.3",
+    "date-fns-tz": "^1.3.7",
+    "home-assistant-js-websocket": "^8.0.1",
+    "ws": "^8.12.0"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "prisma": "^4.8.1",
+    "rollup": "^3.9.1"
+  }
+}

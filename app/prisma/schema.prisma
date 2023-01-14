@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "./prisma/dev.db"
+}
+
+model Routine {
+  id    String @id @default(uuid())
+  name  String
+  timer Timer?
+}
+
+model Timer {
+  id         String   @id @default(uuid())
+
+  routine    Routine  @relation(fields: [routineId], references: [id])
+  routineId  String   @unique
+
+  wakeUpTime DateTime
+  alarmTime DateTime 
+  wakeUpPeriod Int
+}
